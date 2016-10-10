@@ -8,5 +8,5 @@ RUN mkdir -p /etc/s6/php-fpm7 \
     echo "exec crond -f"; \
   } > /etc/s6/crond/run \
   && chmod +x /etc/s6/crond/run
-VOLUME ["/var/spool/cron/crontabs/root"]
+# provide crontab file /var/spool/cron/crontabs/root with --volume option
 CMD ["s6-svscan", "/etc/s6"]
